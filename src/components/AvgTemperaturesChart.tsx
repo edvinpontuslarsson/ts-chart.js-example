@@ -5,9 +5,6 @@ interface IProps {
   cities: ICity[];
 }
 
-// TODO this is also reference
-// https://www.chartjs.org/docs/latest/samples/line/line.html
-
 export default function AvgTemperaturesChart(props: IProps) {
   const { cities } = props;
 
