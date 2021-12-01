@@ -1,7 +1,7 @@
 import './App.css';
 import { Chart, registerables } from 'chart.js';
 import { getCities } from './api/api';
-import AvgTemperaturesChart from './components/AvgTemperaturesChart';
+import MeanTemperatures from './components/MeanTemperatures';
 
 export default function App() {
   Chart.register(...registerables);
@@ -10,7 +10,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <AvgTemperaturesChart cities={cities} />
+      <MeanTemperatures cities={cities} />
     </div>
   );
 }

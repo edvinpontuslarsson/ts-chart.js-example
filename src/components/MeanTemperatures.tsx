@@ -6,7 +6,7 @@ interface IProps {
   cities: ICity[];
 }
 
-export default function AvgTemperaturesChart(props: IProps) {
+export default function MeanTemperatures(props: IProps) {
   const { cities } = props;
 
   const chartData = {
@@ -14,7 +14,7 @@ export default function AvgTemperaturesChart(props: IProps) {
     datasets: cities.map((city, i) => ({
       id: i + 1,
       label: city.name,
-      data: city.avgMonthlyCelciusTemperatures as number[],
+      data: city.meanTemperatures as number[],
       borderColor: getColor(i),
       backgroundColor: getColor(i),
     })),
@@ -29,7 +29,7 @@ export default function AvgTemperaturesChart(props: IProps) {
           plugins: {
             title: {
               display: true,
-              text: 'Average monthly temperatures (°C)',
+              text: 'Daily mean °C',
             },
           },
           scales: {
