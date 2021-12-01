@@ -1,6 +1,10 @@
 import { ICity } from '../api/api';
 import { Line } from 'react-chartjs-2';
-import { getAllMonths, getColor } from '../utils/utils';
+import {
+  getAllMonths,
+  getBackgroundColor,
+  getBorderColor,
+} from '../utils/utils';
 
 interface IProps {
   cities: ICity[];
@@ -15,8 +19,10 @@ export default function MeanTemperatures(props: IProps) {
       id: i + 1,
       label: city.name,
       data: city.meanTemperatures as number[],
-      borderColor: getColor(i),
-      backgroundColor: getColor(i),
+      borderColor: getBorderColor(i),
+      backgroundColor: getBackgroundColor(i),
+      pointRadius: 5,
+      pointHoverRadius: 5,
     })),
   };
 
