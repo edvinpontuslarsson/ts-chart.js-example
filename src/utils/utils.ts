@@ -12,3 +12,18 @@ export const getColor = (i: number) => {
   if (i > colors.length - 1) return 'rgb(0, 0, 0)';
   return colors[i];
 };
+
+export const getAllMonths = () => [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ]

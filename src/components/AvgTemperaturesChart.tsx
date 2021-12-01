@@ -1,6 +1,6 @@
 import { ICity } from '../api/api';
 import { Line } from 'react-chartjs-2';
-import { getColor } from '../utils/utils';
+import { getAllMonths, getColor } from '../utils/utils';
 
 interface IProps {
   cities: ICity[];
@@ -10,20 +10,7 @@ export default function AvgTemperaturesChart(props: IProps) {
   const { cities } = props;
 
   const chartData = {
-    labels: [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'August',
-      'September',
-      'October',
-      'November',
-      'December',
-    ],
+    labels: getAllMonths(),
     datasets: cities.map((city, i) => ({
       id: i + 1,
       label: city.name,
