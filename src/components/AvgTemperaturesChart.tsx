@@ -1,6 +1,5 @@
 import { ICity } from '../api/api';
 import { Line } from 'react-chartjs-2';
-import { ChartData, ScatterDataPoint } from 'chart.js';
 
 interface IProps {
   cities: ICity[];
@@ -30,11 +29,7 @@ export default function AvgTemperaturesChart(props: IProps) {
     return colors[i];
   };
 
-  const chartData: ChartData<
-    'line',
-    (number | ScatterDataPoint | null)[],
-    unknown
-  > = {
+  const chartData = {
     labels: [
       'January',
       'February',
@@ -50,6 +45,7 @@ export default function AvgTemperaturesChart(props: IProps) {
       'December',
     ],
     datasets: cities.map((city, i) => ({
+      id: i + 1,
       label: city.name,
       data: city.avgMonthlyCelciusTemperatures as number[],
       backgroundColor: getColor(i),
@@ -58,7 +54,7 @@ export default function AvgTemperaturesChart(props: IProps) {
 
   return (
     <div className="chart">
-      <Line data={chartData} />
+      <Line datasetIdKey="avg_temp" data={chartData} />
     </div>
   );
 }
