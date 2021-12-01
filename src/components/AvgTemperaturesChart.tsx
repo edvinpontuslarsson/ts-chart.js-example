@@ -5,9 +5,6 @@ interface IProps {
   cities: ICity[];
 }
 
-// TODO see if this works:
-// https://blog.logrocket.com/using-chart-js-react/
-
 // TODO this is also reference
 // https://www.chartjs.org/docs/latest/samples/line/line.html
 
@@ -48,6 +45,7 @@ export default function AvgTemperaturesChart(props: IProps) {
       id: i + 1,
       label: city.name,
       data: city.avgMonthlyCelciusTemperatures as number[],
+      borderColor: getColor(i),
       backgroundColor: getColor(i),
     })),
   };
