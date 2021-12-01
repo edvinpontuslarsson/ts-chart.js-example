@@ -52,7 +52,18 @@ export default function AvgTemperaturesChart(props: IProps) {
 
   return (
     <div className="chart">
-      <Line datasetIdKey="avg_temp" data={chartData} />
+      <Line
+        datasetIdKey="avg_temp"
+        data={chartData}
+        options={{
+          plugins: {
+            title: {
+              display: true,
+              text: 'Average monthly temperatures (°C)',
+            },
+          },
+        }}
+      />
     </div>
   );
 }
