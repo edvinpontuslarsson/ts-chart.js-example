@@ -59,6 +59,13 @@ export default function AvgTemperaturesChart(props: IProps) {
               text: 'Average monthly temperatures (°C)',
             },
           },
+          scales: {
+            y: {
+              ticks: {
+                callback: (temperature) => `${temperature} °C`,
+              },
+            },
+          },
         }}
       />
     </div>
