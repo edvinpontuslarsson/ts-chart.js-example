@@ -1,3 +1,12 @@
+import { getCities } from './api/api';
+import AvgTemperaturesChart from './components/AvgTemperaturesChart';
+
 export default function App() {
-  return <div className="App">temp</div>;
+  const cities = getCities();
+
+  return (
+    <div className="App">
+      <AvgTemperaturesChart cities={cities} />
+    </div>
+  );
 }
